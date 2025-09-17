@@ -1,23 +1,42 @@
 package com.example;
 
+import jakarta.persistence.*;
+
 /**
- * Simple Student model class
+ * Student entity class with Hibernate annotations
  */
+@ Entity
+@Table(name = "students")
 public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String name;
+
     private String enrollmentNo;
+
     private int semester;
+
+    @Column(name = "division", nullable = false, length = 10)
     private String division;
+
+    @Column(name = "department", nullable = false, length = 50)
     private String department;
+
+    @Column(name = "sgpa", nullable = false)
     private double sgpa;
+
+    @Column(name = "cgpa", nullable = false)
     private double cgpa;
+
+//    private String temp;
 
     // Default constructor
     public Student() {}
 
     // Constructor with all fields
-    public Student(String name, String enrollmentNo, int semester, String division, 
+    public Student(String name, String enrollmentNo, int semester, String division,
                    String department, double sgpa, double cgpa) {
         this.name = name;
         this.enrollmentNo = enrollmentNo;
@@ -26,6 +45,7 @@ public class Student {
         this.department = department;
         this.sgpa = sgpa;
         this.cgpa = cgpa;
+//
     }
 
     // Getters and Setters
