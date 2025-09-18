@@ -19,5 +19,8 @@ public class SpringBootDemoApplication {
         SpringApplication.run(SpringBootDemoApplication.class, args);
         System.out.println("   GET  http://localhost:8080/api/students");
         System.out.println("   POST http://localhost:8080/api/students");
+        System.out.println("\n🌐 MVC Endpoints (returns HTML pages):");
+        System.out.println("   GET  http://localhost:8080/mvc/students");
+        System.out.println("   GET  http://localhost:8080/mvc/students/add");
     }
 }
